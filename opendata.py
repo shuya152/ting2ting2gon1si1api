@@ -16,7 +16,7 @@ try:
         else:
             error.append(str(i))
 
-    st.markdown(f"** 共查到{len(data)}/{len(id)}筆資料 **")
+    st.markdown(f"共查到{len(data)}/{len(id)}筆資料")
     df = pd.DataFrame(data)
     st.dataframe(df, use_container_width=True)
 except Exception as e:
@@ -25,6 +25,6 @@ except Exception as e:
 finally:
     if len(error) != 0:
         st.markdown("---")
-        st.markdown(f"** 共{len(error)}筆id尚無資料： **")
+        st.markdown(f"共{len(error)}筆id尚無資料：")
         df = pd.DataFrame(error)
         st.dataframe(df, use_container_width=True)
