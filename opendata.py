@@ -17,7 +17,7 @@ if not st.session_state.data:
         error:list[dict] = []
 
         for i in id:
-            res = requests.get(f'https://ped.uspto.gov/api/queries/cms/public/{i}')
+            res = requests.get(f'https://ped.uspto.gov/api/queries/cms/public/{i}', verify=False)
 
             if res.status_code == 200:
                 json = res.json()
